@@ -17,4 +17,12 @@ defmodule AdventOfCode.Day01 do
     (String.at(Enum.at(t, 0), 0) <> String.at(Enum.at(t, -1), -1))
     |> String.to_integer()
   end
+
+  defp selfParseInt(some_string) do
+    valid_ints = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+
+    # t = confirm_int(some_string, 0, [])
+
+    # result = Enum.map(some_string, fn  )
+  end
 end
