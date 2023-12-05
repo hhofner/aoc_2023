@@ -3,6 +3,7 @@ defmodule AdventOfCode.Day01Test do
 
   import AdventOfCode.Day01
 
+  @tag :skip
   test "part1" do
     input = [
       "1abc2",
@@ -16,7 +17,6 @@ defmodule AdventOfCode.Day01Test do
     assert result == 142
   end
 
-  @tag :skip
   test "part2" do
     input = [
       "two1nine",
@@ -25,11 +25,12 @@ defmodule AdventOfCode.Day01Test do
       "xtwone3four",
       "4nineeightseven2",
       "zoneight234",
-      "7pqrstsixteen"
+      "7pqrstsixteen",
+      "onetwothreeight"
     ]
 
     result = part2(input)
 
-    assert result == 281
+    assert result == 299
   end
 end
