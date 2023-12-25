@@ -2,6 +2,7 @@ defmodule AdventOfCode.Day02 do
   def part1(args) do
     max = %{blue: 14, red: 12, green: 13}
 
+    IO.inspect(args)
     args
     |> Enum.map(fn x ->
       IO.inspect(parse_line(x))
@@ -19,6 +20,8 @@ defmodule AdventOfCode.Day02 do
     end)
   end
 
+  # Bad name - it parses the line and does other stuff too
+  # maybe, parse_line_and_return_highest
   defp parse_line(game_string) do
     "Game " <> id = Enum.at(String.split(game_string, ":"), 0)
 
@@ -53,6 +56,16 @@ defmodule AdventOfCode.Day02 do
     end
   end
 
-  def part2(_args) do
+  def part2(args) do
+    args
+    |> Enum.reduce(0, fn (line, acc) -> 
+      acc + power_of(line)
+    end)
+  end
+
+  def power_of(line) do
+    %{blue: blue_amount, red: red_amount, green: green_amount, id: _} = parse_line(line)
+
+    blue_amount * red_amount * green_amount
   end
 end
